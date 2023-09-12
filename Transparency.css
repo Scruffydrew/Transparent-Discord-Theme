@@ -300,7 +300,7 @@
 .chatIcon-R5MUNn {
   margin-right: 120px;
 }
-.toolbar-3_r2xA > div:nth-child(6) {
+#app-mount > div.appAsidePanelWrapper-ev4hlp > div.notAppAsidePanel-3yzkgB > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div > div > div > div.chat-2ZfjoI > div.wrapper-1gVUIN.noChat-2UYgeE.video-3n15R6 > div.callContainer-HtHELf.theme-dark > div > div.videoControls-353CsJ > div.topControls-23RE3h.controlSection-1mNixL > div > div > div > section > div > div.toolbar-3_r2xA > div:nth-child(6) {
   width: 20px;
 }
 .divider-2keupe {
@@ -338,6 +338,9 @@ video {
 }
 .chatButtonSpacer-16BvMu {
   max-width: 0px;
+}
+#app-mount > div.appAsidePanelWrapper-ev4hlp > div.notAppAsidePanel-3yzkgB > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div > div > div > div.chat-2ZfjoI > div.wrapper-1gVUIN.noChat-2UYgeE.video-3n15R6 > div.callContainer-HtHELf.theme-dark > div > div.videoControls-353CsJ > div.topControls-23RE3h.controlSection-1mNixL > div > div > div > section > div > div.toolbar-3_r2xA > div:nth-child(5) {
+  width: 20px;
 }
 /* ---------------------------------------------------------------------- */
 /* animation for popup for find or start a conversation */
