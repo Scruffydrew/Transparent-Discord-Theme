@@ -1,0 +1,370 @@
+/**
+ * @name Transparency
+ * @author Original Frostedglass by Gibbu#1211 edited by Scruffydrew#2909
+ * @version 2.0.0
+ * @description Transparent window with adjustable blur and brightness. Dark theme is required.
+ * @invite ZHthyCw
+ * @donate https://paypal.me/IanRGibson
+ * @authorId 174868361040232448
+ * @source https://github.com/DiscordStyles/FrostedGlass
+ * @website https://gibbu.me/
+*/
+
+@import url("https://discordstyles.github.io/FrostedGlass/dist/FrostedGlass.css");
+
+/* BlackBox tags */
+@import url('https://monstrousdev.github.io/themes/addons/user-tags.css');
+
+/* Old Windows titlebar - remove this @import if you wish to use default titlebar */
+@import url("https://gibbu.github.io/BetterDiscord-Themes/addons/windows-titlebar.css");
+
+:root {
+  /* Background image variables */
+  --background-image: url(' '); /* Main background image | URL MUST BE A DIRECT LINK (ending in .jpg, .jpeg, .png, .gif) */
+  --background-image-blur: 5px; /* Blur intensity of --background-image | Must end in px | DEFAULT: 5px */
+  --background-image-size: cover; /* Size of the background image | DEFAUT: cover | OPTIONS: cover, contain */
+  --background-image-position: center; /* Position of background image | DEAFULT: center | OPTIONS: top, right, bottom, left, center */
+
+  /* Popout & Modal variables */
+  --popout-modal-image: var(--background-image); /* Background image for popouts and modals | URL MUST BE A DIRECT LINK (ending in .jpg, .jpeg, .png, .gif) */
+  --popout-modal-blur: 5px; /* Blur intensity of --popout-modal-image | Must end in px | DEFAULT: 5px */
+  --popout-modal-size: cover; /* Size of the popout/modal image | DEFAUT: cover | OPTIONS: cover, contain */
+  --popout-modal-position: center; /* Position of popout/modal image | DEAFULT: center | OPTIONS: top, right, bottom, left, center */
+
+  /* Home image variables */
+  --home-button-image: url('https://raw.githubusercontent.com/DiscordStyles/FrostedGlass/aa600a8077f159d1476f3573e2299fd724a9c9ea/dist/assets/discord.svg'); /* Home button image | URL MUST BE A DIRECT LINK (ending in .jpg, .jpeg, .png, .gif) */
+  --home-button-size: cover; /* Size of the home button image | DEFAUT: cover */
+  --home-button-position: center; /* Position of home button image | DEAFULT: center */
+
+  /* Brightness variables */
+  --serverlist-brightness: 0.5; /* Brightness for serverlist | 0 - 1 (decimals allowed) | DEFAULT: 0.8 */
+  --left-brightness: 0.5; /* Channels and DM list brightness | 0 - 1 (decimals allowed) | DEFAULT: 0.8 */
+  --middle-brightness: 0.5; /* Chat brightness | 0 - 1 (decimals allowed) | DEFAULT: 0.6 */
+  --right-brightness: 0; /* Members and Now Playing brightness | 0 - 1 (decimals allowed) | DEFAULT: 0 */
+  --popout-modal-brightness: 0.75; /* Brightness for popouts and modals | 0 - 1 (decimals allowed) | DEFAULT: 0.75 */
+
+  /* Gradient variables */
+  --gradient-primary: 103,58,183; /* DEFAULT: 103,58,183 */
+  --gradient-secondary: 63,81,181; /* DEFAULT: 63,81,181 */
+  --gradient-direction: 320deg; /* DEFAULT: 320deg */
+
+  /* Tint variables */
+  --tint-colour: 255,51,159; /* Colour of tint | DEAFULT: 255,51,159 */
+  --tint-brightness: 0; /* Brightness of --tint-colour | 0 - 1 (decimals allowed) | DEFAULT: 0 */
+
+  /* Other variables */
+  --window-padding:   0px; /* Spacing around the Discord window | DEFAULT: 20px */
+  --window-roundness: 0px; /* Roundness of Discord | DEFAULT: 10px */
+  --scrollbar-colour: rgba(255,255,255,0.05); /* DEFAULT: rgba(255,255,255,0.05) */
+  --link-colour: #00b0f4; /* DEFAULT: #00b0f4 */
+  --background-secondary: rgba(0,0,0,0); /* Background for individual Members and Now Playing | DEFAULT: rgba(0,0,0,0)*/
+  /*
+    Visit https://fonts.google.com and select one to your liking.
+    Now just follow this tutorial: https://imgur.com/a/CNbw7xC
+  */
+  --font: 'Whitney';
+  /* Do not touch */
+  --update-notice-1: none;
+}
+/* My Additons */
+/* ---Remove shadow effect on the top of the section next to the server list--- */ 
+.animatedContainer-2laTjx {box-shadow: 0px 0px 0px 0px #000000;} /* Remove server banner shadow when banner is visible*/
+.header-3OsQeK {box-shadow: 0px 0px 0px 0px #000000;} /* Remove server banner shadow when banner is hidden */
+.searchBar-3TnChZ {box-shadow: 0px 0px 0px 0px #000000;} /* Remove the search bar shadow when on your direct messages page*/
+/* ---------------------------------------------------------------------------- */
+.frame-oXWS21 {margin: 0 0 0px;}  /* For use with DevilBro's ReadAllNotificationsButton | Reduces spacing under the button | If you don't have the plugin this will do nothing */
+.name-28HaxV {color: white;}  /* Name text colour of unmuted channels */
+.modeMuted-2T4MDZ > div > a > div > div {color: silver;}  /* Name text colour of muted channels */
+.icon-2W8DHg > path {fill:"currentColor"; d:"M21.025 5V4C21.025 2.88 20.05 2 19 2C17.95 2 17 2.88 17 4V5C16.4477 5 16 5.44772 16 6V9C16 9.55228 16.4477 10 17 10H19H21C21.5523 10 22 9.55228 22 9V5.975C22 5.43652 21.5635 5 21.025 5ZM20 5H18V4C18 3.42857 18.4667 3 19 3C19.5333 3 20 3.42857 20 4V5Z";}
+
+.container-ZMc96U {box-shadow: 0px 0px 0px 0px #000000;}
+.theme-dark {box-shadow: 0px 0px 0px 0px #000000;}
+.themed-Hp1KC_ {box-shadow: 0px 0px 0px 0px #000000;}
+.tabBody-2dgbAs {box-shadow: 0px 0px 0px 0px #000000;}
+.container-2cd8Mz {box-shadow: 0px 0px 0px 0px #000000;}
+.theme-dark .container-ZMc96U .themed-Hp1KC_ {box-shadow: 0px 0px 0px 0px #000000;}
+.section {box-shadow: 0px 0px 0px 0px #000000;}
+
+.theme-dark {
+  --guild-header-text-shadow: 0 0px 0px rgb(0, 0, 0, 0.4);
+}
+.searchBarComponent-3N7dCG{
+	background: Radial-gradient(transparent, rgba(0, 0, 0, 0.2));
+}
+
+.interactiveSelected-29CP8y {	/* DM's selector + friends, library, nirto, message requests, family centre */
+	background: rgba(0, 0, 0, 0.2);
+	color: var(--interactive-active);
+}
+.interactiveSelected-29CP8y:hover {		/* DM's selector + friends, library, nirto, message requests, family centre */
+	background: rgba(0, 0, 0, 0.3);
+}
+.linkButton-2NshQj:hover:not(.interactiveSelected-29CP8y) {		/* DM's selector + friends, library, nirto, message requests, family centre */
+	background: rgba(0, 0, 0, 0.1);
+}
+.selected-26oxtA {		/* DM's selector + friends, library, nirto, message requests, family centre */
+	background: rgba(0, 0, 0, 0.2);
+	color: var(--interactive-active);
+}
+.headerText-1qIDDT {	 /* Direct messages header */
+	border-radius: 5px;
+	padding-left: 10px;
+	padding-top: 1px;
+	/*background: rgba(0, 0, 0, 0.2);*/
+}
+.interactive-26HRN_:focus-within{   /* DM's selector + friends, library, nirto, message requests, family centre */
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+.container-ZMc96U {	/* top bar */
+	background: rgba(0, 0, 0, 0.5);	
+}
+.contentPanel-2uDEUG {
+	background: rgba(0, 0, 0, 0.5);	
+}
+
+.interactive-26HRN_:hover:not(.linkButton-2NshQj) {		/* DM's selector + friends, library, nirto, message requests, family centre */
+	background: rgba(0, 0, 0, 0.1);
+}
+.interactiveSelected-29CP8y:hover:not(.linkButton-2NshQj){
+	background: rgba(0, 0, 0, 0.3);
+}
+.modeMuted-2T4MDZ .name-28HaxV, .icon-2W8DHg {
+	color: rgb(175, 175, 175);
+	font-weight: bold;
+}
+
+.name-28HaxV {
+	color: rgb(255,255,255)
+}
+.bar-wDIGjg {
+	background: rgba(0, 0, 0, 0.3);
+	padding: 4px 8px 4px 4px;
+}
+.libraryHeader-2loraV:before {
+	content: None;
+}
+.wrapper-2RrXDg{
+  border-color: rgb(255, 1, 140);
+  border-width: 0px;
+  background: Radial-gradient(transparent, rgba(0, 0, 0, 0.2));
+  /*box-shadow: 0 0 5px rgb(1, 111, 255);*/
+}
+.tabBody-2dgbAs:before {
+  height: 0px;
+}
+#app-mount .base-2jDfDU::before {
+	content: None;
+  height: 5px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), transparent);
+}
+#app-mount .member-2gU6Ar {
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: transparent;
+  /*box-shadow: 0 0 3px rgb(255, 1, 140);*/
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding: 1px;
+}
+#app-mount .member-2gU6Ar:hover {
+  /*border-color: rgb(255, 1, 140);*/
+  border-width: 3px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding: 0px;
+  box-shadow: none;
+}
+.button-ejjZWC.lookFilled-1H2Jvj.colorBrand-2M3O3N.sizeMin-3Yqxk5.grow-2T4nbg{
+  background: rgb(0, 0, 0, 0.2);
+}
+.member-48YF_l {
+  margin-top: 6px;
+}
+::-webkit-scrollbar {
+	 display: none;
+}
+.theme-dark{
+	--scrollbar-colour: rgb(251,233,3);
+  --interactive-muted: rgb(175, 175, 175);
+}
+.floating-window-titlebar {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;    
+}
+.floating-window-titlebar, .floating-window-content{
+  background: rgb(59, 59, 59);    
+}
+.floating-window {
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.floating-window.resizable {
+  padding-bottom: 0px;
+}
+.userProfileOuterUnthemed-2b2rsv, .didRender-2SiRlm {
+  background: rgb(0, 0, 0, 0.5);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(1, 111, 255);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(1, 111, 255);
+}
+#app-mount .member-2gU6Ar {
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: transparent;
+  
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding: 1px;
+}
+#app-mount .member-2gU6Ar.selected-1-Z6gm .layout-1qmrhw {
+  box-shadow: 0 0 40px rgb(255, 1, 140);
+  z-index: 1
+}
+#app-mount .member-2gU6Ar.selected-1-Z6gm {
+  box-shadow: none;
+}
+/* server call stuff */
+.callContainer-HtHELf {
+	background: none;
+}
+.tile-2Dr6M1.idle-3MGs7O, .tile-2Dr6M1.noInteraction--ahl__{
+  background: transparent;
+}
+.tile-2Dr6M1{
+  background: transparent;
+}
+.icon-2xnN2Y{
+  color: white;
+}
+
+.layer-2BGhQ8 {
+  margin-left: -4px; /*for exact positioning */
+}
+
+.labelContainer-35-WEd:not([aria-haspopup="true"]){
+  margin: 2px 8px 2px 0px;
+}
+.platform-win .typeWindows-2-g3UY{ /* draggable area */
+  background: rgba(0, 0, 0, 0);
+}
+.backdrop-2ByYRN {
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+#app-mount .quickswitcher-pKcM9U .scroller-2qwVWY{
+  padding: 0;
+  margin: 0;
+}
+.selected-1sf9UK {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+.selected-1sf9UK:hover {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+.item-2GWPIy:hover:not(.selected-1sf9UK, .addFriend-emTWY1){
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+.addFriend-emTWY1:hover{
+  background:rgba(36, 128, 70, 0.6) !important;
+}
+.addFriend-emTWY1:not(.selected-1sf9UK){
+  background:rgba(36, 128, 70, 0.3) !important;
+}
+.tabBar-ra-EuL .addFriend-emTWY1.addFriend-emTWY1.addFriend-emTWY1[aria-selected=true] {
+  color: white !important;
+  background:rgba(36, 128, 70, 0.6) !important;
+}
+.tabBar-ra-EuL .addFriend-emTWY1.addFriend-emTWY1.addFriend-emTWY1[aria-selected=true]:hover{
+  background:rgba(36, 128, 70, 0.9) !important;
+}
+.container-TT--xs > section {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+.guildNameTextLimitedSize-3jKqMf {
+  -webkit-line-clamp: 3;
+}
+.gradientContainer-phMG8d{
+  display: none !important;
+}
+.hoverable-yK3jB7 {
+  color: white;
+}
+.chatIcon-R5MUNn {
+  margin-right: 120px;
+}
+.toolbar-3_r2xA > div:nth-child(6) {
+  width: 20px;
+}
+.divider-2keupe {
+  background: rgba(0, 0, 0, 0);
+}
+#app-mount .container-3XgAHv {
+  background: rgba(0, 0, 0, 0);
+}
+.chat-1-OBC7:before {
+  display: none;
+}
+.themedBackground-3uF0xW{
+  background: rgba(0, 0, 0, 0.3);
+}
+.buttons-uaqb-5 {
+  padding-right: 10px;
+}
+.__web-inspector-hide-shortcut__ {
+  visibility: hidden;
+}
+.flex-2S1XBF.vertical-3aLnqW.justifyCenter-rrurWZ.alignCenter-14kD11.noWrap-hBpHBz.root-1Emen5.__web-inspector-hide-shortcut__ {
+  background: rgb(0, 0, 0);
+}
+.videoWrapper-3rtb_V{
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 16px;
+}
+video {
+  background-color: rgba(0, 0, 0, 0);
+  width: 100% !important;
+  height: 100% !important;
+}
+.root-1Emen5 {
+  border-radius: 16px;
+}
+.chatButtonSpacer-16BvMu {
+  max-width: 0px;
+}
+/* ---------------------------------------------------------------------- */
+/* animation for popup for find or start a conversation */
+.focusLock-bHVOlV {
+  animation: scale-up-center 0.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+/* ----------------------------------------------
+* Generated by Animista on 2023-9-12 15:12:54
+* Licensed under FreeBSD License.
+* See http://animista.net/license for more info. 
+* w: http://animista.net, t: @cssanimista
+* ---------------------------------------------- */
+
+/**
+* ----------------------------------------
+* animation scale-up-center
+* ----------------------------------------
+*/
+
+@keyframes scale-up-center {
+0% {
+-webkit-transform: scale(0.01);
+    transform: scale(0).01;
+}
+100% {
+-webkit-transform: scale(1);
+    transform: scale(1);
+}
+}
+/* ---------------------------------------------------------------------- */
