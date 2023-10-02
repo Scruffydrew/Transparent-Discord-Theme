@@ -342,6 +342,11 @@ video {
 #app-mount > div.appAsidePanelWrapper-ev4hlp > div.notAppAsidePanel-3yzkgB > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div > div > div > div.chat-2ZfjoI > div.wrapper-1gVUIN.noChat-2UYgeE.video-3n15R6 > div.callContainer-HtHELf.theme-dark > div > div.videoControls-353CsJ > div.topControls-23RE3h.controlSection-1mNixL > div > div > div > section > div > div.toolbar-3_r2xA > div:nth-child(5) {
   width: 20px;
 }
+
+.layerContainer-2lfOPe >div > div > div > div > div {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
 /* ---------------------------------------------------------------------- */
 /* animation for popup for find or start a conversation */
 .focusLock-bHVOlV {
