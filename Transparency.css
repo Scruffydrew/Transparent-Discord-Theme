@@ -351,6 +351,10 @@ video {
   background-color: rgba(0, 0, 0, 0) !important;
 }
 
+#app-mount > div.appAsidePanelWrapper-ev4hlp > div.notAppAsidePanel-3yzkgB > div:nth-child(3) > div > div > div.tooltipContent-38tm3I > div:nth-child(2) >div {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
 /* ---------------------------------------------------------------------- */
 /* animation for popup for find or start a conversation */
 .focusLock-bHVOlV {
