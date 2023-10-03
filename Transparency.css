@@ -347,6 +347,10 @@ video {
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
+#app-mount > div.appAsidePanelWrapper-ev4hlp > div.notAppAsidePanel-3yzkgB > div:nth-child(3) > div > div > div.tooltipContent-38tm3I > div > div:has(.flowerStarContainer-1QeD-L){
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
 /* ---------------------------------------------------------------------- */
 /* animation for popup for find or start a conversation */
 .focusLock-bHVOlV {
